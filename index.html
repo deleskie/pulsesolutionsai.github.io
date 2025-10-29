@@ -2,93 +2,138 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Pulse Solutions AI – Intelligent Security & AI Automation</title>
+<title>Pulse Solutions AI – Next-Generation Security & Automation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Poppins', sans-serif; background-color: #0a0f14; color: #e0e6ed; line-height: 1.6; }
-header { background: radial-gradient(circle at top left, #00bcd4, #152238); padding: 100px 20px; text-align: center; }
-header h1 { font-size: 3.5em; margin-bottom: 10px; color: #fff; }
-header p { font-size: 1.3em; color: #d0d8e0; margin-bottom: 30px; }
-header .cta { padding: 15px 30px; background: #00bcd4; color: #0a0f14; border: none; border-radius: 4px; font-weight: 600; text-decoration: none; }
-nav { background: #0f1d2a; padding: 15px 0; display: flex; justify-content: center; position: sticky; top: 0; z-index: 100; }
-nav a { color: #00bcd4; margin: 0 20px; text-decoration: none; font-weight: 500; }
-nav a:hover { color: #fff; }
-section { padding: 80px 20px; max-width: 1200px; margin: auto; }
-section h2 { font-size: 2em; margin-bottom: 20px; border-bottom: 3px solid #00bcd4; display: inline-block; padding-bottom: 5px; }
-.features { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 40px; }
-.feature-card { background: #152238; border: 1px solid #1f364d; border-radius: 8px; flex: 1 1 calc(50% - 20px); padding: 30px; min-width: 280px; transition: transform 0.2s ease; }
-.feature-card:hover { transform: translateY(-5px); }
-.feature-card h3 { color: #00bcd4; margin-bottom: 10px; font-size: 1.4em; }
-.feature-card p { color: #aebdcc; }
-.about { margin-top: 40px; }
-.about p { margin-bottom: 15px; }
-.bio { background: #0f1d2a; padding: 60px 20px; border-radius: 8px; }
-.bio h2 { color: #00bcd4; }
-.bio p { margin-bottom: 15px; color: #aebdcc; }
-.contact { background: #152238; padding: 60px 20px; border-radius: 8px; }
-.contact h2 { color: #00bcd4; }
-.contact p { margin-bottom: 20px; color: #aebdcc; }
-footer { text-align: center; padding: 30px; background: #0f1d2a; color: #768da6; }
-@media (max-width: 768px) {
-  .feature-card { flex: 1 1 100%; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Poppins', sans-serif; background:#0d1117; color:#e6edf3; line-height:1.6; }
+.hero { position:relative; background-image:url('https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1400&q=80'); background-size:cover; background-position:center; padding:160px 20px; text-align:center; }
+.hero::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.6); }
+.hero h1 { position:relative; font-size:3.5em; color:#fff; margin-bottom:15px; }
+.hero p { position:relative; font-size:1.4em; color:#c9d1d9; max-width:800px; margin: auto; }
+.hero .cta { position:relative; margin-top:30px; display:inline-block; padding:15px 40px; background:#007acc; color:#fff; border-radius:4px; text-decoration:none; font-weight:600; transition:background 0.3s; }
+.hero .cta:hover { background:#005fa3; }
+
+nav { background:#010409; padding:15px 0; position:sticky; top:0; z-index:999; display:flex; justify-content:center; box-shadow:0 2px 4px rgba(0,0,0,0.5); }
+nav a { color:#58a6ff; margin:0 20px; text-decoration:none; font-weight:500; }
+nav a:hover { color:#fff; }
+
+section { padding:80px 20px; max-width:1200px; margin:auto; }
+section h2 { font-size:2.4em; margin-bottom:20px; border-left:5px solid #58a6ff; padding-left:15px; color:#58a6ff; }
+
+.services-grid { display:flex; flex-wrap:wrap; gap:30px; }
+.service { background:#161b22; border:1px solid #21262d; border-radius:8px; padding:30px; flex:1 1 calc(50% - 30px); min-width:280px; position:relative; transition:transform 0.2s ease; }
+.service:hover { transform:translateY(-6px); }
+.service h3 { color:#58a6ff; margin-bottom:10px; font-size:1.6em; }
+.service p { color:#8b949e; }
+.service img { width:100%; height:160px; object-fit:cover; border-radius:6px; margin-bottom:15px; }
+
+.about, .why, .founder { margin-top:40px; }
+.about p, .why p, .founder p { margin-bottom:15px; color:#8b949e; }
+
+.why ul { list-style:none; padding-left:0; margin-top:20px; }
+.why li { margin-bottom:10px; padding-left:25px; position:relative; }
+.why li::before { content:'\2713'; position:absolute; left:0; top:0; color:#58a6ff; }
+
+.founder { background:#161b22; padding:60px 20px; border-radius:8px; text-align:center; }
+.founder h3 { color:#58a6ff; margin-bottom:15px; }
+.founder img { width:150px; height:150px; border-radius:50%; object-fit:cover; margin-bottom:20px; border:3px solid #58a6ff; }
+
+.contact { background:#0c111a; padding:60px 20px; border-radius:8px; text-align:center; }
+.contact h2 { color:#58a6ff; margin-bottom:20px; }
+.contact p { margin-bottom:20px; color:#8b949e; }
+.contact a { color:#58a6ff; text-decoration:none; }
+footer { text-align:center; padding:30px; background:#010409; color:#8b949e; margin-top:60px; font-size:0.9em; }
+
+@media(max-width:768px) {
+  .services-grid { flex-direction:column; }
+  .service { flex:1 1 100%; }
+  .hero h1 { font-size:2.5em; }
+  nav a { margin:0 12px; }
 }
 </style>
 </head>
 <body>
-<header>
+<header class="hero">
   <h1>Pulse Solutions AI</h1>
-  <p>Internet Routing · Private LLM Inference · DDoS & Automation Consulting</p>
-  <a href="#contact" class="cta">Get in Touch</a>
+  <p>Building secure, intelligent networks and AI automation for the modern enterprise. From robust routing to private LLMs, we help you harness the future.</p>
+  <a href="#contact" class="cta">Start Your Journey</a>
 </header>
 <nav>
   <a href="#services">Services</a>
   <a href="#about">About</a>
-  <a href="#bio">Founder</a>
+  <a href="#why">Why Us</a>
+  <a href="#founder">Founder</a>
   <a href="#contact">Contact</a>
 </nav>
+
 <section id="services">
   <h2>Our Services</h2>
-  <div class="features">
-    <div class="feature-card">
+  <div class="services-grid">
+    <div class="service">
+      <img src="https://images.unsplash.com/photo-1494605906726-6f04ebfccaaf?auto=format&fit=crop&w=800&q=80" alt="Network routing">
       <h3>Internet Routing & Architecture</h3>
-      <p>Design and optimize global networks from ISP backbones to enterprise WANs. We craft resilient architectures, advise on BGP policies and peering strategies, and ensure visibility across your infrastructure.</p>
+      <p>We design resilient, scalable networks for ISPs, cloud providers and enterprises. Our expertise spans BGP, peering strategies, traffic engineering and observability. Whether you’re building from the ground up or optimizing an existing backbone, we’ll help you navigate complexity.</p>
     </div>
-    <div class="feature-card">
+    <div class="service">
+      <img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=800&q=80" alt="LLM training">
       <h3>Private LLM Training & Inference</h3>
-      <p>Build and fine‑tune large‑language models on your own code and data. We create secure training environments, customize models for domain-specific tasks and deploy inference pipelines that respect privacy and scale.</p>
+      <p>Bring the power of large-language models to your data. We set up secure training environments, fine‑tune models to your domain and deploy inference pipelines that respect privacy, compliance and performance requirements.</p>
     </div>
-    <div class="feature-card">
+    <div class="service">
+      <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Security consulting">
       <h3>DDoS & Security Consulting</h3>
-      <p>Defend against distributed‑denial‑of‑service attacks and cyber threats. Our experts analyze traffic patterns, deploy anomaly detection, and design multi-layered mitigation strategies honed from hyperscale network defense.</p>
+      <p>With decades mitigating attacks at hyperscale, we know how to defend your infrastructure. We perform threat assessments, implement anomaly detection and design multi-layered mitigation strategies to keep your services online under fire.</p>
     </div>
-    <div class="feature-card">
+    <div class="service">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="AI automation">
       <h3>Automation & Marketing Solutions</h3>
-      <p>Accelerate growth with intelligent automation. Our AI-powered workflows streamline operations, enhance customer engagement and optimize campaigns—without revealing proprietary platform names.</p>
+      <p>Streamline your operations and outreach. Our AI-driven automation workflows handle repetitive tasks, orchestrate customer engagement and optimize marketing campaigns—powered by our own marketing automation platform.</p>
     </div>
   </div>
 </section>
+
 <section id="about">
   <h2>About Pulse Solutions AI</h2>
   <div class="about">
-    <p>Pulse Solutions AI is the umbrella company behind James DeLeskie’s consulting practice and innovative automation software. We help businesses—from lean startups to hyperscalers—secure their digital infrastructure and harness the power of AI.</p>
-    <p>Our mission is to merge decades of internet routing and network‑security expertise with forward‑thinking AI solutions. We believe in transparent, candid advice that doesn’t sugar‑coat the realities of modern cyber threats. Every engagement is tailored to your unique needs, ensuring scalable and sustainable results.</p>
+    <p>Pulse Solutions AI is the brainchild of James DeLeskie, a veteran network architect and cybersecurity pioneer. We operate as a parent company for our consulting practice and our suite of automation tools. Our mission is simple: empower organizations with secure, intelligent technology that scales.</p>
+    <p>From building one of the first ISPs in Canada and Ireland to architecting global backbones and DDoS defence platforms, our experience is unparalleled. Today we combine this network know-how with cutting-edge AI research to help businesses thrive in an increasingly complex digital landscape.</p>
+    <p>We don’t just give advice; we roll up our sleeves and build solutions alongside you. Our team takes a forward-thinking, no‑nonsense approach—you’ll always hear the truth about your security and automation challenges, and we’ll work with you to overcome them.</p>
   </div>
 </section>
-<section id="bio" class="bio">
-  <h2>Meet the Founder</h2>
-  <p>James DeLeskie is a seasoned network and security architect with more than 25 years in the trenches. In the 1990s he helped build some of the earliest ISPs in Canada and Ireland. He later led global network‑security efforts at Tata Communications, where he oversaw the largest DDoS detection and mitigation platform of its time.</p>
-  <p>As founder of Heimdall Networks and later Mimir Networks, James pioneered affordable anomaly‑detection services. Today he works at Oracle Cloud Infrastructure, crafting scalable, cloud‑native defenses against DDoS attacks and advising clients on network design. His passion for heavy‑metal music fuels a relentless pursuit of innovation and authenticity.</p>
+
+<section id="why">
+  <h2>Why Choose Us?</h2>
+  <div class="why">
+    <p>Pulse Solutions AI stands at the intersection of networking, security and artificial intelligence. Here’s what sets us apart:</p>
+    <ul>
+      <li><strong>Proven Expertise:</strong> Decades of hands-on experience building and securing global networks.</li>
+      <li><strong>Tailored AI Solutions:</strong> Custom LLM training and automation designed around your data and workflows.</li>
+      <li><strong>Holistic Security:</strong> Comprehensive DDoS and threat‑mitigation strategies based on real-world attacks.</li>
+      <li><strong>Transparency & Trust:</strong> Straightforward recommendations without hype, grounded in evidence and results.</li>
+      <li><strong>Scalable Architecture:</strong> Designs that grow with you—supporting startups through hyperscale expansions.</li>
+    </ul>
+  </div>
 </section>
+
+<section id="founder" class="founder">
+  <h2>About James DeLeskie</h2>
+  <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" alt="Portrait">
+  <h3>Founder & Chief Architect</h3>
+  <p>James has spent over 25 years pushing the boundaries of networking and security. In the early ’90s, he cut his teeth building local ISPs, later joining Teleglobe and Tata Communications to lead network‑security initiatives. At Tata, he and his team built the world’s largest DDoS detection and mitigation platform.</p>
+  <p>He went on to found Heimdall Networks and Mimir Networks, delivering affordable anomaly detection and DDoS protection to ISPs and enterprises. Now at Oracle Cloud Infrastructure, James designs cloud‑scale defences and continues his mission of making the internet safer and more reliable. Outside of work, he’s a passionate heavy‑metal guitarist—channeling that energy into every project.</p>
+</section>
+
 <section id="contact" class="contact">
-  <h2>Contact Us</h2>
-  <p>If you’re ready to secure your infrastructure or explore AI‑driven automation, we’d love to hear from you. Let’s build something extraordinary together.</p>
-  <p><strong>Email:</strong> info@pulsesolutions.ai<br>
-     <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jimdeleskie" style="color:#00bcd4;">Jim DeLeskie</a></p>
+  <h2>Get in Touch</h2>
+  <p>Ready to transform your digital future? Let’s discuss how Pulse Solutions AI can secure and automate your world.</p>
+  <p><strong>Email:</strong> <a href="mailto:info@pulsesolutions.ai">info@pulsesolutions.ai</a><br>
+     <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jimdeleskie">Jim DeLeskie</a></p>
 </section>
+
 <footer>
-  <p>© 2025 Pulse Solutions AI. All rights reserved.</p>
+  &copy; 2025 Pulse Solutions AI. All rights reserved.
 </footer>
 </body>
 </html>
