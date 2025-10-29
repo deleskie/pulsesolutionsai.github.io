@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Pulse Solutions AI – AI Security & Automation Excellence</title>
+<title>Pulse Solutions AI – AI Security & Automation Excellence</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
@@ -16,78 +16,234 @@
   --radius: 8px;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
-header { position: relative; background-image: url('https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 80px 20px; }
-header::before { content:''; position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
-header h1 { position: relative; font-size: 3em; font-weight: 900; margin-bottom: 15px; color: #fff; }
-header p { position: relative; font-size: 1.2em; max-width: 700px; margin: auto; color: var(--muted); }
-header .cta { position: relative; margin-top: 25px; display: inline-block; background: var(--primary); padding: 14px 30px; border-radius: var(--radius); color: #fff; font-weight: 600; text-decoration: none; transition: background 0.3s; }
-header .cta:hover { background: var(--accent); }
-nav { background: #02070c; position: sticky; top: 0; z-index: 1000; padding: 12px 20px; display:flex; justify-content:center; gap:30px; box-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-nav a { color: var(--muted); text-decoration: none; font-weight: 500; transition: color 0.3s; }
-nav a:hover { color: var(--primary); }
-section { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
-section h2 { font-size: 2.2em; margin-bottom: 20px; border-left: 5px solid var(--primary); padding-left: 15px; color: var(--primary); }
-.services-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 30px; }
-.service { background: var(--card); padding: 25px; border-radius: var(--radius); transition: transform 0.3s, box-shadow 0.3s; }
-.service:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
-.service img { width:100%; height:160px; object-fit:cover; border-radius: var(--radius); margin-bottom: 15px; }
-.service h3 { font-size: 1.4em; color: var(--accent); margin-bottom: 10px; }
-.service p { color: var(--muted); }
-.approach-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:30px; }
-.approach { background: var(--card); padding:25px; border-radius: var(--radius); }
-.approach h3 { color: var(--accent); margin-bottom: 10px; }
-.approach p { color: var(--muted); }
-.testimonials { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:30px; }
-.testimonial { background: var(--card); padding:25px; border-radius: var(--radius); font-style: italic; color: var(--muted); }
-.testimonial span { display:block; margin-top:15px; color: var(--accent); font-style: normal; font-weight: 600; }
-.bio { display:flex; flex-wrap: wrap; gap:40px; align-items:center; }
-.bio img { width:200px; height:200px; border-radius:50%; border:4px solid var(--primary); object-fit: cover; }
-.bio-content { flex:1; }
-bio-content h3 { color: var(--accent); margin-bottom: 10px; font-size:1.8em; }
-bio-content p { color: var(--muted); margin-bottom:12px; }
-.footer { text-align:center; padding:40px 20px; background:#02070c; color: var(--muted); font-size: 0.9em; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+nav {
+  background: #02070c;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: var(--primary);
+}
+header {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  min-height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+header::before {
+  content:'';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+header h1 {
+  position: relative;
+  font-size: 2.2em;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: #fff;
+}
+header p {
+  position: relative;
+  font-size: 1em;
+  max-width: 600px;
+  margin: auto;
+  color: var(--muted);
+}
+header .cta {
+  position: relative;
+  margin-top: 20px;
+  display: inline-block;
+  background: var(--primary);
+  padding: 12px 26px;
+  border-radius: var(--radius);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+header .cta:hover {
+  background: var(--accent);
+}
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  border-left: 5px solid var(--primary);
+  padding-left: 15px;
+  color: var(--primary);
+}
+.services-grid,
+.approach-grid,
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 30px;
+}
+.service,
+.approach,
+.why {
+  background: var(--card);
+  padding: 25px;
+  border-radius: var(--radius);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.service:hover,
+.approach:hover,
+.why:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+.service img,
+.blog-card img {
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius: var(--radius);
+  margin-bottom: 15px;
+}
+.service h3,
+.approach h3,
+.why h3 {
+  font-size: 1.4em;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.service p,
+.approach p,
+.why p {
+  color: var(--muted);
+}
+.bio {
+  display:flex;
+  flex-wrap: wrap;
+  gap:40px;
+  align-items:center;
+}
+.bio img {
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  border:4px solid var(--primary);
+  object-fit: cover;
+}
+.bio-content {
+  flex:1;
+}
+.bio-content h3 {
+  color: var(--accent);
+  margin-bottom: 10px;
+  font-size:1.8em;
+}
+.bio-content p {
+  color: var(--muted);
+  margin-bottom:12px;
+}
+.blog-section {
+  background: var(--card);
+  padding: 25px;
+  border-radius: var(--radius);
+}
+.blog-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
+}
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+.blog-card-content {
+  padding: 20px;
+}
+.blog-card-content h3 {
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.blog-card-content p {
+  color: var(--muted);
+}
+.footer {
+  text-align:center;
+  padding:40px 20px;
+  background:#02070c;
+  color: var(--muted);
+  font-size: 0.9em;
+}
 </style>
 </head>
 <body>
 <nav>
   <a href="#services">Services</a>
-  <a href="#approach">Our Approach</a>
+  <a href="#approach">Approach</a>
+  <a href="#why">Why Us</a>
+  <a href="#blog">Blog</a>
   <a href="#bio">About</a>
   <a href="#contact">Contact</a>
 </nav>
 <header>
   <div>
-    <h1>Pulse Solutions AI</h1>
-    <p>Secure your infrastructure and unleash AI-driven automation with the experts behind hyperscale networking and DDoS mitigation.</p>
+    <h1>Pulse Solutions AI</h1>
+    <p>Secure your infrastructure and unleash AI‑driven automation with the experts behind hyperscale networking and DDoS mitigation.</p>
     <a href="#contact" class="cta">Schedule a Consultation</a>
   </div>
 </header>
+
 <section id="services">
   <h2>Services</h2>
   <div class="services-grid">
     <div class="service">
       <img src="https://images.unsplash.com/photo-1556185781-a7700a78a29c?auto=format&fit=crop&w=800&q=80" alt="Network engineering">
-      <h3>Internet Routing & Architecture</h3>
-      <p>Design and optimize high-performance networks for ISPs and hyperscalers. From BGP strategy to traffic engineering, we ensure your connectivity is resilient, secure and scalable.</p>
+      <h3>Internet Routing & Architecture</h3>
+      <p>Design and optimize high‑performance networks for ISPs and hyperscalers. From BGP strategy to traffic engineering, we ensure your connectivity is resilient, secure and scalable.</p>
     </div>
     <div class="service">
       <img src="https://images.unsplash.com/photo-1603885474490-624c5c83fada?auto=format&fit=crop&w=800&q=80" alt="LLM training">
-      <h3>Private LLM Training & Inference</h3>
+      <h3>Private LLM Training & Inference</h3>
       <p>Build powerful AI models on your own data with privacy by design. We architect and tune large language models for inference at scale while safeguarding intellectual property.</p>
     </div>
     <div class="service">
       <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80" alt="DDoS consulting">
-      <h3>DDoS & Security Consulting</h3>
+      <h3>DDoS & Security Consulting</h3>
       <p>Leverage 25+ years of experience in global DDoS mitigation. We conduct holistic security assessments, deploy zero‑trust architectures and implement layered defenses to stay ahead of attackers.</p>
     </div>
     <div class="service">
       <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Automation solutions">
-      <h3>Automation & Marketing Solutions</h3>
-      <p>Automate workflows across operations, sales and marketing. Our custom tools and no-code integrations reduce manual work, increase efficiency and let your team focus on innovation.</p>
+      <h3>Automation & Marketing Solutions</h3>
+      <p>Automate workflows across operations, sales and marketing. Our custom tools and no‑code integrations reduce manual work, increase efficiency and let your team focus on innovation.</p>
     </div>
   </div>
 </section>
+
 <section id="approach">
   <h2>Our Approach</h2>
   <div class="approach-grid">
@@ -105,25 +261,70 @@ bio-content p { color: var(--muted); margin-bottom:12px; }
     </div>
   </div>
 </section>
+
+<section id="why">
+  <h2>Why Choose Us?</h2>
+  <div class="why-grid">
+    <div class="why">
+      <h3>Proven Expertise</h3>
+      <p>We’ve engineered networks for world‑class ISPs and built award‑winning DDoS defenses. Our decades of experience translate into reliable, high‑performing solutions.</p>
+    </div>
+    <div class="why">
+      <h3>Tailored AI</h3>
+      <p>Your data is unique. Our AI models are trained on your data with strict privacy controls, delivering bespoke intelligence while protecting your IP.</p>
+    </div>
+    <div class="why">
+      <h3>Holistic Security</h3>
+      <p>Security isn’t an afterthought. We integrate zero‑trust principles, threat detection and mitigation into every layer of your architecture.</p>
+    </div>
+    <div class="why">
+      <h3>Scalable & Transparent</h3>
+      <p>Our solutions grow with your business and come with clear documentation and training so your team is empowered to manage and extend them.</p>
+    </div>
+  </div>
+</section>
+
+<section id="blog">
+  <h2>Latest Insights</h2>
+  <div class="blog-card">
+    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Blog post">
+    <div class="blog-card-content">
+      <h3>Behind the Scenes: Countering DDoS attacks with the power of cloud</h3>
+      <p>Read how cloud‑scale protection counters modern DDoS threats and why scalable architectures are essential to safeguard services and reputations.</p>
+      <p><a href="https://blogs.oracle.com/cloud-infrastructure/post/behind-the-scenes-countering-ddos-attacks-with-cloud" style="color:var(--primary);text-decoration:underline;">Read the article</a></p>
+    </div>
+  </div>
+</section>
+
 <section id="bio">
   <h2>Meet the Founder</h2>
   <div class="bio">
+<<<<<<< HEAD
     <img src="jim.jpg" alt="James DeLeskie">
     <div class="bio-content">
       <h3>James DeLeskie</h3>
       <p>A pioneering network architect and security leader, James cut his teeth building some of the first ISPs in Canada and Ireland. He has led global DDoS defense at Tata Communications, built record‑breaking routers at Avici Systems and founded Mimir Networks. He helped drive innovation at Oracle Cloud Infrastructure and helps organizations harness AI for transformative results.</p>
+=======
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt="James DeLeskie">
+    <div class="bio-content">
+      <h3>James DeLeskie</h3>
+      <p>James is a pioneering network architect and security leader. He cut his teeth building some of the first ISPs in Canada and Ireland, led global DDoS defense at Tata Communications and built record‑breaking routers at Avici Systems. He founded Mimir Networks to bring DDoS protection to the masses, and later served as a consulting member of technical staff at Oracle Cloud Infrastructure. Today, he helps organizations harness AI and automation for transformative results.</p>
+>>>>>>> 83bc8ee (..)
       <p>When he’s not designing hyperscale networks, you’ll find him at heavy‑metal shows—bringing the same energy and passion to cybersecurity and automation that he brings to the mosh pit.</p>
     </div>
   </div>
 </section>
+
 <section id="contact">
-  <h2>Let's Work Together</h2>
+  <h2>Let’s Work Together</h2>
   <p>Ready to take your network and AI initiatives to the next level? Reach out and let’s explore how Pulse Solutions AI can elevate your business.</p>
-  <p>Email: <a href="mailto:info@pulsesolutions-ai.com">info@pulsesolutions‑ai.com</a></p>
+  <p>Email: <a href="mailto:info@pulsesolutions-ai.com">info@pulsesolutions-ai.com</a></p>
   <p>LinkedIn: <a href="https://www.linkedin.com/in/jimdeleskie" target="_blank">Jim DeLeskie</a></p>
 </section>
+
 <div class="footer">
   © 2025 Pulse Solutions AI — All rights reserved.
 </div>
 </body>
 </html>
+
