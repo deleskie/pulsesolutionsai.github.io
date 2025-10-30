@@ -172,6 +172,11 @@ section h2 {
   padding: 25px;
   border-radius: var(--radius);
 }
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 30px;
+}
 .blog-card {
   background: var(--card);
   border-radius: var(--radius);
@@ -286,12 +291,30 @@ section h2 {
 
 <section id="blog">
   <h2>Latest Insights</h2>
-  <div class="blog-card">
-    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Blog post">
-    <div class="blog-card-content">
-      <h3>Behind the Scenes: Countering DDoS attacks with the power of cloud</h3>
-      <p>Read how cloud‑scale protection counters modern DDoS threats and why scalable architectures are essential to safeguard services and reputations.</p>
-      <p><a href="https://blogs.oracle.com/cloud-infrastructure/post/behind-the-scenes-countering-ddos-attacks-with-cloud" style="color:var(--primary);text-decoration:underline;">Read the article</a></p>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="BGP automation">
+      <div class="blog-card-content">
+        <h3>Routing Chaos with a Soundtrack</h3>
+        <p>Faith No More riffs meet BGP, FlowSpec, and resilient automation in a behind-the-scenes look at keeping the internet steady.</p>
+        <p><a href="blog/routing-chaos-with-a-soundtrack.html" style="color:var(--primary);text-decoration:underline;">Read the full post</a></p>
+      </div>
+    </div>
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="Veteran engineers">
+      <div class="blog-card-content">
+        <h3>The Quiet Professionals of Tech</h3>
+        <p>Why veteran engineers are the steady hands modern security and networking teams can’t live without—and how to lead like they do.</p>
+        <p><a href="blog/the-quiet-professionals-of-tech.html" style="color:var(--primary);text-decoration:underline;">Read the full post</a></p>
+      </div>
+    </div>
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Cloud DDoS defenses">
+      <div class="blog-card-content">
+        <h3>Behind the Scenes: Countering DDoS Attacks</h3>
+        <p>Cloud-scale protection counters modern DDoS threats and proves why scalable architectures safeguard services and reputations.</p>
+        <p><a href="https://blogs.oracle.com/cloud-infrastructure/post/behind-the-scenes-countering-ddos-attacks-with-cloud" style="color:var(--primary);text-decoration:underline;">Read the article</a></p>
+      </div>
     </div>
   </div>
 </section>
@@ -322,4 +345,3 @@ section h2 {
 </div>
 </body>
 </html>
-
