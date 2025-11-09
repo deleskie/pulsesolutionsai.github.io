@@ -4,9 +4,21 @@
   <meta charset="UTF-8" />
   <title>Pulse Solutions AI – Secure Automation & Bespoke AI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pulse Solutions AI hardens networks, DDoS defenses, and private AI automation for teams that need Tier 1 rigor without hyperscale overhead." />
+  <link rel="canonical" href="https://pulsesolutionsai.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pulse Solutions AI – Secure Automation & Bespoke AI">
+  <meta property="og:description" content="Founded by engineers who have built Tier 1 backbones, delivered Tier Zero response, and patented DDoS & RDMA tech.">
+  <meta property="og:url" content="https://pulsesolutionsai.github.io/">
+  <meta property="og:image" content="https://pulsesolutionsai.github.io/jim.png">
+  <meta property="og:site_name" content="Pulse Solutions AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pulse Solutions AI – Secure Automation & Bespoke AI">
+  <meta name="twitter:description" content="Harden infrastructure, unleash automation, keep velocity high.">
+  <meta name="twitter:image" content="https://pulsesolutionsai.github.io/jim.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #05070c;
@@ -28,6 +40,10 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -64,7 +80,7 @@
     main {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0 24px 80px;
+      padding: 0 24px 140px;
     }
 
     nav {
@@ -150,6 +166,23 @@
       font-size: 1.1rem;
       margin-bottom: 32px;
       max-width: 540px;
+    }
+
+    .hero-subhead {
+      font-family: 'IBM Plex Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.95rem;
+      color: var(--highlight);
+      margin-top: -4px;
+      margin-bottom: 16px;
+    }
+
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-top: -12px;
+      margin-bottom: 32px;
     }
 
     .hero-chip {
@@ -253,8 +286,36 @@
       color: var(--accent);
     }
 
+    .data-card span {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .data-card p {
+      margin: 4px 0 0;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
     section {
       margin: 70px 0;
+      padding: 20px 0;
+    }
+
+    .panel {
+      padding: 60px 36px;
+      border-radius: var(--radius);
+      border: 1px solid var(--stroke);
+      background: rgba(11, 18, 27, 0.8);
+      box-shadow: 0 35px 70px rgba(2, 6, 23, 0.65);
+    }
+
+    .panel.alt {
+      background: linear-gradient(135deg, rgba(8, 47, 73, 0.35), rgba(2, 6, 23, 0.9));
     }
 
     .section-title {
@@ -285,32 +346,62 @@
       color: var(--muted);
     }
 
-    .metrics {
+    .stat-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 22px;
+      margin-top: 30px;
     }
 
-    .metric {
-      padding: 24px;
+    .stat-card {
+      padding: 26px;
       border-radius: var(--radius);
       border: 1px solid var(--stroke);
       background: var(--card);
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition), border-color var(--transition);
     }
 
-    .metric span {
-      display: block;
-      font-size: 0.8rem;
+    .stat-card::after {
+      content: '';
+      position: absolute;
+      inset: auto auto 0 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(120deg, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(34, 211, 238, 0.4);
+    }
+
+    .stat-card:hover::after {
+      opacity: 1;
+    }
+
+    .stat-card span {
+      font-family: 'IBM Plex Mono', monospace;
       letter-spacing: 0.08em;
+      font-size: 0.78rem;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 8px;
     }
 
-    .metric strong {
-      font-size: 1.9rem;
+    .stat-card strong {
+      display: block;
+      font-size: 2rem;
+      margin: 10px 0;
       color: var(--highlight);
+    }
+
+    .stat-card p {
+      margin: 0;
+      color: var(--text);
+      font-size: 0.95rem;
     }
 
     .cards-grid {
@@ -418,6 +509,15 @@
       color: var(--muted);
     }
 
+    .bio-quote {
+      font-style: italic;
+      color: var(--highlight);
+      margin-top: 6px;
+      border-left: 3px solid var(--highlight);
+      padding-left: 12px;
+      font-size: 0.95rem;
+    }
+
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -490,6 +590,44 @@
       border-top: 1px solid var(--stroke);
     }
 
+    .section-cta {
+      margin-top: 30px;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .section-cta .cta-primary {
+      box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+    }
+
+    .floating-cta {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      background: linear-gradient(120deg, var(--accent), var(--primary));
+      color: #020617;
+      font-weight: 700;
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 15px 35px rgba(14, 165, 233, 0.35);
+      z-index: 200;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .floating-cta:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px rgba(14, 165, 233, 0.45);
+    }
+
+    @media (max-width: 640px) {
+      .floating-cta {
+        right: 16px;
+        bottom: 16px;
+        padding: 12px 18px;
+      }
+    }
+
     @media (max-width: 780px) {
       .nav-inner {
         flex-direction: column;
@@ -515,6 +653,25 @@
       }
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Pulse Solutions AI",
+    "url": "https://pulsesolutionsai.github.io/",
+    "logo": "https://pulsesolutionsai.github.io/jim.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/jimdeleskie"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "James DeLeskie",
+      "jobTitle": "Founder & Principal",
+      "description": "Network security architect with Tier Zero experience, DDoS and RDMA patents, and decades of Tier 1 carrier leadership.",
+      "image": "https://pulsesolutionsai.github.io/jim.png"
+    }
+  }
+  </script>
 </head>
 <body>
   <nav>
@@ -539,6 +696,8 @@
         <h1>Harden infrastructure, unleash automation, keep velocity high.</h1>
         <p>Pulse Solutions AI is a network security and applied AI studio focusing on routing architecture, private LLM operations, and workflow automation for teams that cannot afford downtime.</p>
         <p>Founded by engineers who previously designed Tier 1 backbones, provided Tier Zero support for global-scale events, and co-authored patents in DDoS mitigation and RDMA-powered AI fabrics, we carry decades of lived experience into every engagement without the hyperscale overhead.</p>
+        <p class="hero-subhead">We’ve seen the Internet from both sides of the pager.</p>
+        <p class="hero-tagline">Keep the lights on, the amps hot, and the packets flowing.</p>
         <div class="hero-actions">
           <a class="cta-primary" href="#contact">Schedule a Consultation</a>
           <a class="cta-secondary" href="#services">See Capabilities</a>
@@ -548,45 +707,57 @@
       <div class="hero-visual">
         <div class="hero-visual-content">
           <div class="data-card">
-            <span>Tier 1 builds delivered before Pulse</span>
+            <div>
+              <span>Tier 1 builds delivered before Pulse</span>
+              <p>Carrier and national backbone programs architected end-to-end.</p>
+            </div>
             <strong>60+</strong>
           </div>
           <div class="data-card">
-            <span>DDoS scrubbing capacity previously stewarded</span>
+            <div>
+              <span>DDoS scrubbing capacity stewarded</span>
+              <p>Tier Zero response for large-scale events & live traffic.</p>
+            </div>
             <strong>35+ Tbps</strong>
           </div>
           <div class="data-card">
-            <span>AI & automation launches in prior roles</span>
+            <div>
+              <span>AI & automation launches in prior roles</span>
+              <p>Private LLM labs, assistants, and workflow orchestration.</p>
+            </div>
             <strong>120+</strong>
           </div>
           <div class="data-card">
-            <span>Career footprint across industries</span>
-            <strong>Telco · Cloud · Finance · Gov</strong>
+            <div>
+              <span>Career footprint across industries</span>
+              <p>Telco · Cloud · Finance · Gov · Large-scale live events.</p>
+            </div>
+            <strong>30 yrs</strong>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="services">
+    <section id="services" class="panel">
       <div class="section-title"><span></span>What we deliver</div>
       <h2>Secure infrastructure and purpose-built AI, delivered end-to-end.</h2>
       <p class="intro">Pulse Solutions AI delivers modern routing architectures, private model operations, and automation toolchains designed for today’s operators. Every playbook is informed by hard-earned lessons from decades of frontline engineering.</p>
 
-      <div class="metrics">
-        <div class="metric">
+      <div class="stat-grid">
+        <div class="stat-card">
           <span>Career benchmark</span>
           <strong>38%</strong>
-          <p class="intro">Average latency reduction delivered while leading traffic-engineering initiatives for Tier 1 carriers.</p>
+          <p>Average latency reduction delivered while leading traffic-engineering initiatives for Tier 1 carriers.</p>
         </div>
-        <div class="metric">
+        <div class="stat-card">
           <span>Change adoption</span>
           <strong>5x</strong>
-          <p class="intro">Lift in feature usage seen when our founder embedded with ops and GTM teams to roll out automation and AI assistants.</p>
+          <p>Lift in feature usage seen when our founder embedded with ops and GTM teams to roll out automation and AI assistants.</p>
         </div>
-        <div class="metric">
+        <div class="stat-card">
           <span>War-room response</span>
           <strong>&lt;15 min</strong>
-          <p class="intro">Detection-to-mitigation times achieved during previous DDoS and zero-trust programs supporting Tier Zero events.</p>
+          <p>Detection-to-mitigation times achieved during previous DDoS and zero-trust programs supporting Tier Zero events.</p>
         </div>
       </div>
 
@@ -608,11 +779,14 @@
           <p>Marketing ops, sales enablement, and internal tooling delivered via low-code + custom stacks so teams can focus on signal, not swivel-chair tasks.</p>
         </article>
       </div>
+      <div class="section-cta">
+        <a class="cta-primary" href="#contact">Talk to Pulse →</a>
+      </div>
     </section>
 
     <hr class="divider" />
 
-    <section id="approach">
+    <section id="approach" class="panel alt">
       <div class="section-title"><span></span>How we work</div>
       <h2>Strategic clarity paired with gritty execution.</h2>
       <p class="intro">Every engagement starts with context gathering, moves through co-design, and stays accountable with instrumentation plus ongoing improvement loops.</p>
@@ -647,9 +821,12 @@
           </div>
         </div>
       </div>
+      <div class="section-cta">
+        <a class="cta-primary" href="#contact">Talk to Pulse →</a>
+      </div>
     </section>
 
-    <section id="why-us">
+    <section id="why-us" class="panel">
       <div class="section-title"><span></span>Why Pulse</div>
       <h2>Pragmatic specialists who have carried the pager.</h2>
       <div class="cards-grid" style="margin-top: 20px;">
@@ -669,6 +846,9 @@
           <h3>Transparent handoff</h3>
           <p>Documentation, enablement, and instrumentation are part of the engagement—not an optional phase.</p>
         </article>
+      </div>
+      <div class="section-cta">
+        <a class="cta-primary" href="#contact">Talk to Pulse →</a>
       </div>
     </section>
 
@@ -716,6 +896,7 @@
             <p><strong>Prior to founding Pulse:</strong> James helped build early ISPs in Canada and Ireland, provided Tier Zero support for large global events, co-authored patents in DDoS mitigation and RDMA networking, partnered with Avici Systems on record-breaking routers, founded Mimir Networks, and supported routing plus applied AI programs inside Oracle Cloud Infrastructure.</p>
             <p><strong>Pulse today:</strong> He now channels that experience into bespoke security, routing, and AI programs—bringing RDMA-aware architectures and proven DDoS countermeasures to ambitious teams without hyperscale bureaucracy.</p>
             <p>When he’s not designing resilient systems, he’s likely at a heavy-metal show—bringing the same intensity to automation and AI programs that he brings to the mosh pit.</p>
+            <blockquote class="bio-quote">“Thirty years, countless outages, and still chasing the perfect route.”</blockquote>
           </div>
         </div>
         <div class="card">
@@ -745,5 +926,6 @@
       © 2025 Pulse Solutions AI — Secure automation and AI programs with confidence.
     </footer>
   </main>
+  <a class="floating-cta" href="#contact">Talk to Pulse →</a>
 </body>
 </html>
