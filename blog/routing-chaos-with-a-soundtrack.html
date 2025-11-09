@@ -5,72 +5,150 @@
 <title>Routing Chaos with a Soundtrack: BGP, FlowSpec, and the Faith No More Approach to Control</title>
 <link rel="canonical" href="https://www.deleskie.com/blog/routing-chaos-with-a-soundtrack.html">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0b1019;
-    --card: #141c2d;
-    --accent: #f97316;
-    --accent-soft: rgba(249, 115, 22, 0.18);
-    --text: #f8fafc;
+    --bg: #05070c;
+    --card: rgba(11, 18, 27, 0.9);
+    --primary: #0ea5e9;
+    --accent: #22d3ee;
+    --highlight: #f97316;
+    --text: #e5e7eb;
     --muted: #94a3b8;
-    --max-width: 780px;
+    --radius: 18px;
+    --max-width: 860px;
+    --transition: 220ms ease;
   }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    background: radial-gradient(circle at top left, rgba(249,115,22,0.08), transparent 55%),
-                linear-gradient(160deg, #060912 0%, #0f172a 55%, #05070e 100%);
-    color: var(--text);
     font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 40px 20px 80px;
-    line-height: 1.7;
+    background: radial-gradient(circle at top, rgba(8, 47, 73, 0.45), transparent 45%), var(--bg);
+    color: var(--text);
+    min-height: 100vh;
   }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  header {
-    max-width: var(--max-width);
-    margin: auto;
-    padding-bottom: 30px;
-    border-bottom: 1px solid rgba(249, 115, 22, 0.35);
+  body::after, body::before {
+    content: '';
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    filter: blur(30px);
+    z-index: -1;
   }
-  header h1 {
-    margin: 0 0 12px;
-    font-size: clamp(2.1rem, 4vw, 2.6rem);
+  body::before {
+    inset: -20% auto auto -10%;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.25), transparent 65%);
   }
-  header p.meta {
-    color: var(--muted);
-    font-size: 0.92rem;
-    letter-spacing: 0.04em;
+  body::after {
+    inset: auto -10% -25% auto;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.3), transparent 70%);
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    backdrop-filter: blur(12px);
+    background: rgba(5, 7, 12, 0.75);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--accent);
     text-transform: uppercase;
+    text-decoration: none;
   }
-  article {
+  .nav-links { display: flex; gap: 26px; font-size: 0.95rem; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition);
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background var(--transition), transform var(--transition);
+  }
+  .pill:hover {
+    background: rgba(34, 211, 238, 0.15);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+  main {
     max-width: var(--max-width);
-    margin: 40px auto;
+    margin: 0 auto;
+    padding: 120px 20px 80px;
+  }
+  header.hero {
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 24px;
+  }
+  header.hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  header.hero p.meta {
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.88rem;
+  }
+  .hero-media {
+    margin: 30px 0 10px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 25px 45px rgba(2, 6, 23, 0.7);
+  }
+  .hero-media img {
+    width: 100%; height: 360px; object-fit: cover; display: block;
+  }
+  .article-card {
     background: var(--card);
     padding: 42px;
-    border-radius: 12px;
-    box-shadow: 0 24px 48px rgba(4, 7, 14, 0.55);
+    border-radius: var(--radius);
+    box-shadow: 0 24px 48px rgba(2, 6, 23, 0.65);
   }
-  article h2 {
+  .article-card h2 {
     margin-top: 36px;
     margin-bottom: 12px;
-    color: var(--accent);
-    font-size: 1.4rem;
+    color: var(--highlight);
+    font-size: 1.45rem;
   }
-  article p {
-    margin: 18px 0;
-  }
+  .article-card p { margin: 18px 0; }
   .callout {
     margin: 34px 0;
     padding: 18px;
-    background: var(--accent-soft);
-    border-radius: 10px;
-    border: 1px solid rgba(249, 115, 22, 0.25);
+    background: rgba(249, 115, 22, 0.12);
+    border-radius: var(--radius);
+    border: 1px solid rgba(249, 115, 22, 0.35);
     text-align: center;
   }
   .callout img {
     max-width: 100%;
-    border-radius: 8px;
+    border-radius: var(--radius);
     box-shadow: 0 14px 32px rgba(4, 7, 14, 0.65);
   }
   .callout figcaption {
@@ -79,27 +157,54 @@
     font-size: 0.85rem;
     letter-spacing: 0.03em;
   }
-  footer {
-    max-width: var(--max-width);
-    margin: 60px auto 0;
+  .cta-panel {
+    margin-top: 40px;
+    padding: 28px 32px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(34, 211, 238, 0.35);
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.18), rgba(2, 6, 23, 0.8));
+  }
+  .cta-panel h3 { margin-bottom: 12px; font-size: 1.4rem; }
+  .cta-panel a { color: var(--accent); font-weight: 600; }
+  footer.page-footer {
+    margin-top: 70px;
     text-align: center;
     color: var(--muted);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
-  @media (max-width: 600px) {
-    article {
-      padding: 30px;
-    }
+  footer.page-footer a { color: var(--accent); text-decoration: none; }
+  footer.page-footer a:hover { text-decoration: underline; }
+  @media (max-width: 640px) {
+    .article-card { padding: 28px; }
+    .nav-inner { flex-direction: column; align-items: flex-start; }
+    .nav-links { flex-wrap: wrap; }
   }
 </style>
 </head>
 <body>
-<header>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/">Pulse Solutions AI</a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#approach">Approach</a>
+      <a href="/#why-us">Why Us</a>
+      <a href="/#blog">Insights</a>
+      <a href="/#bio">About</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a class="pill" href="mailto:info@pulsesolutions-ai.com">Book an Intro</a>
+  </div>
+</nav>
+<main>
+<header class="hero">
   <h1>Routing Chaos with a Soundtrack: BGP, FlowSpec, and the Faith No More Approach to Control</h1>
   <p class="meta">Faith No More riffs, late-night BGP saves, and the tooling that keeps the amps humming.</p>
 </header>
-
-<article>
+<figure class="hero-media">
+  <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80" alt="Engineer reviewing networking telemetry on stage lighting background">
+</figure>
+<article class="article-card">
 <h2>1989: When Two Revolutions Plugged In</h2>
 <p>In 1989, I graduated high school, bought my first 1200-baud modem, and joined a generation discovering that the world could be connected—line by line, byte by byte. The same year, two other revolutions hit their respective stages. One was <em>Faith No More’s</em> <strong>The Real Thing</strong>, an album that shattered the idea of what rock could be. The other was the Border Gateway Protocol (BGP), which did the same for the internet.</p>
 
@@ -120,7 +225,7 @@
 <p>Back then, trust wasn’t cryptographic—it was personal. We knew who ran which AS by name. If something broke, you’d call them directly. There was no ticket system or escalation path. Just one engineer talking to another, trying to bring order back from chaos.</p>
 
 <figure class="callout">
-  <img src="/assets/nstn.jpg" alt="Distribution of global Internet users in 1995">
+  <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1400&q=80" alt="Distribution of global Internet users in 1995">
   <figcaption>NSTN’s world in 1995: the global Internet was still small enough to tape to a NOC wall.</figcaption>
 </figure>
 
@@ -194,9 +299,14 @@
 
 <p>Keep the horns raised—and the packets flowing.</p>
 </article>
-
-<footer>
-  &copy; 2025 James&nbsp;DeLeskie – All rights reserved. <a href="/">Back to Home</a>
+<div class="cta-panel">
+  <h3>Need calmer BGP war rooms?</h3>
+  <p>Pulse Solutions AI helps teams modernize routing, FlowSpec, and incident response playbooks with battle-tested patterns.</p>
+  <p><a href="mailto:info@pulsesolutions-ai.com">info@pulsesolutions-ai.com</a> · <a href="https://www.linkedin.com/in/jimdeleskie" target="_blank" rel="noopener">LinkedIn</a></p>
+</div>
+<footer class="page-footer">
+  © 2025 Pulse Solutions AI. <a href="/#blog">Back to insights</a>
 </footer>
+</main>
 </body>
 </html>
