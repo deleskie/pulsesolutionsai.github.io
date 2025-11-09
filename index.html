@@ -1,347 +1,747 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Pulse Solutions AI – AI Security & Automation Excellence</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg: #0b0e11;
-  --card: #121a23;
-  --primary: #0ea5e9;
-  --accent: #22d3ee;
-  --text: #d1d5db;
-  --muted: #6b7280;
-  --radius: 8px;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-}
-nav {
-  background: #02070c;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 12px 20px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-nav a:hover {
-  color: var(--primary);
-}
-header {
-  position: relative;
-  background-image: url('https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1600&q=80');
-  background-size: cover;
-  background-position: center;
-  min-height: 25vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 60px 20px;
-}
-header::before {
-  content:'';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-}
-header h1 {
-  position: relative;
-  font-size: 2.2em;
-  font-weight: 900;
-  margin-bottom: 10px;
-  color: #fff;
-}
-header p {
-  position: relative;
-  font-size: 1em;
-  max-width: 600px;
-  margin: auto;
-  color: var(--muted);
-}
-header .cta {
-  position: relative;
-  margin-top: 20px;
-  display: inline-block;
-  background: var(--primary);
-  padding: 12px 26px;
-  border-radius: var(--radius);
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-header .cta:hover {
-  background: var(--accent);
-}
-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
-}
-section h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  border-left: 5px solid var(--primary);
-  padding-left: 15px;
-  color: var(--primary);
-}
-.services-grid,
-.approach-grid,
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap: 30px;
-}
-.service,
-.approach,
-.why {
-  background: var(--card);
-  padding: 25px;
-  border-radius: var(--radius);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.service:hover,
-.approach:hover,
-.why:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
-}
-.service img,
-.blog-card img {
-  width:100%;
-  height:160px;
-  object-fit:cover;
-  border-radius: var(--radius);
-  margin-bottom: 15px;
-}
-.service h3,
-.approach h3,
-.why h3 {
-  font-size: 1.4em;
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-.service p,
-.approach p,
-.why p {
-  color: var(--muted);
-}
-.bio {
-  display:flex;
-  flex-wrap: wrap;
-  gap:40px;
-  align-items:center;
-}
-.bio img {
-  width:200px;
-  height:200px;
-  border-radius:50%;
-  border:4px solid var(--primary);
-  object-fit: cover;
-}
-.bio-content {
-  flex:1;
-}
-.bio-content h3 {
-  color: var(--accent);
-  margin-bottom: 10px;
-  font-size:1.8em;
-}
-.bio-content p {
-  color: var(--muted);
-  margin-bottom:12px;
-}
-.blog-section {
-  background: var(--card);
-  padding: 25px;
-  border-radius: var(--radius);
-}
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap: 30px;
-}
-.blog-card {
-  background: var(--card);
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: transform .3s, box-shadow .3s;
-}
-.blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
-}
-.blog-card-content {
-  padding: 20px;
-}
-.blog-card-content h3 {
-  color: var(--accent);
-  margin-bottom: 8px;
-}
-.blog-card-content p {
-  color: var(--muted);
-}
-.footer {
-  text-align:center;
-  padding:40px 20px;
-  background:#02070c;
-  color: var(--muted);
-  font-size: 0.9em;
-}
-</style>
+  <meta charset="UTF-8" />
+  <title>Pulse Solutions AI – Secure Automation & Bespoke AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #05070c;
+      --bg-alt: #0b121b;
+      --card: rgba(11, 18, 27, 0.85);
+      --stroke: rgba(255, 255, 255, 0.08);
+      --primary: #0ea5e9;
+      --accent: #22d3ee;
+      --highlight: #64ffda;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --max-width: 1200px;
+      --transition: 220ms ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, rgba(8, 47, 73, 0.45), transparent 40%), var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: -30% auto auto -10%;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.28), transparent 65%);
+      filter: blur(20px);
+      z-index: -2;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: auto -20% -30% auto;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.18), transparent 70%);
+      filter: blur(20px);
+      z-index: -2;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(5, 7, 12, 0.75);
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 18px 24px;
+      gap: 18px;
+    }
+
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: background var(--transition), color var(--transition), transform var(--transition);
+    }
+
+    .pill:hover {
+      background: rgba(34, 211, 238, 0.12);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 50px;
+      padding: 110px 0 80px;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2.5rem, 5vw, 3.7rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero-copy p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+      max-width: 540px;
+    }
+
+    .hero-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(14, 165, 233, 0.08);
+      border: 1px solid rgba(14, 165, 233, 0.3);
+      color: var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .cta-primary,
+    .cta-secondary {
+      padding: 14px 26px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .cta-primary {
+      background: linear-gradient(120deg, var(--accent), var(--primary));
+      color: #020617;
+      box-shadow: 0 10px 30px rgba(14, 165, 233, 0.25);
+    }
+
+    .cta-secondary {
+      border: 1px solid var(--stroke);
+      color: var(--text);
+    }
+
+    .cta-primary:hover,
+    .cta-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      position: relative;
+      border-radius: var(--radius);
+      padding: 32px;
+      background: linear-gradient(145deg, rgba(2, 6, 23, 0.8), rgba(15, 23, 42, 0.65));
+      border: 1px solid var(--stroke);
+      overflow: hidden;
+      min-height: 320px;
+    }
+
+    .hero-visual::after,
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(50px);
+      opacity: 0.5;
+    }
+
+    .hero-visual::after {
+      width: 230px;
+      height: 230px;
+      background: rgba(34, 211, 238, 0.35);
+      inset: 10% auto auto 40%;
+    }
+
+    .hero-visual::before {
+      width: 180px;
+      height: 180px;
+      background: rgba(14, 165, 233, 0.25);
+      inset: auto 5% 10% auto;
+    }
+
+    .hero-visual-content {
+      position: relative;
+    }
+
+    .data-card {
+      background: rgba(2, 6, 23, 0.7);
+      border: 1px solid rgba(226, 232, 240, 0.08);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .data-card strong {
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    section {
+      margin: 70px 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .section-title span {
+      width: 100px;
+      height: 1px;
+      background: var(--stroke);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+
+    .intro {
+      max-width: 720px;
+      color: var(--muted);
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .metric {
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--stroke);
+      background: var(--card);
+    }
+
+    .metric span {
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .metric strong {
+      font-size: 1.9rem;
+      color: var(--highlight);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      border-radius: var(--radius);
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      padding: 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(34, 211, 238, 0.4);
+      box-shadow: 0 20px 45px rgba(2, 6, 23, 0.7);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      color: var(--accent);
+    }
+
+    .divider {
+      border: none;
+      height: 1px;
+      background: var(--stroke);
+      margin: 80px 0;
+    }
+
+    .approach-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .timeline-step {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(14, 165, 233, 0.12);
+      border: 1px solid rgba(14, 165, 233, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .bio-card {
+      border-radius: var(--radius);
+      border: 1px solid var(--stroke);
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(8, 47, 73, 0.7));
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .bio-card img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid rgba(34, 211, 238, 0.6);
+      object-fit: cover;
+    }
+
+    .bio-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .bio-meta h3 {
+      font-size: 1.4rem;
+      color: var(--accent);
+    }
+
+    .bio-meta span {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .blog-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--stroke);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+
+    .blog-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(34, 211, 238, 0.4);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .blog-card-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .blog-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .cta-panel {
+      margin-top: 60px;
+      border-radius: var(--radius);
+      padding: 40px;
+      border: 1px solid rgba(34, 211, 238, 0.4);
+      background: linear-gradient(120deg, rgba(14, 165, 233, 0.18), rgba(2, 6, 23, 0.8));
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cta-panel p {
+      color: var(--text);
+    }
+
+    .cta-panel a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .footer {
+      margin-top: 90px;
+      padding: 40px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--stroke);
+    }
+
+    @media (max-width: 780px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        padding-top: 80px;
+      }
+
+      .hero-actions {
+        width: 100%;
+      }
+
+      .cta-primary,
+      .cta-secondary {
+        flex: 1;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-<nav>
-  <a href="#services">Services</a>
-  <a href="#approach">Approach</a>
-  <a href="#why">Why Us</a>
-  <a href="#blog">Blog</a>
-  <a href="#bio">About</a>
-  <a href="#contact">Contact</a>
-</nav>
-<header>
-  <div>
-    <h1>Pulse Solutions AI</h1>
-    <p>Secure your infrastructure and unleash AI‑driven automation with the experts behind hyperscale networking and DDoS mitigation.</p>
-    <a href="#contact" class="cta">Schedule a Consultation</a>
-  </div>
-</header>
-
-<section id="services">
-  <h2>Services</h2>
-  <div class="services-grid">
-    <div class="service">
-      <img src="https://images.unsplash.com/photo-1556185781-a7700a78a29c?auto=format&fit=crop&w=800&q=80" alt="Network engineering">
-      <h3>Internet Routing & Architecture</h3>
-      <p>Design and optimize high‑performance networks for ISPs and hyperscalers. From BGP strategy to traffic engineering, we ensure your connectivity is resilient, secure and scalable.</p>
-    </div>
-    <div class="service">
-      <img src="https://images.unsplash.com/photo-1603885474490-624c5c83fada?auto=format&fit=crop&w=800&q=80" alt="LLM training">
-      <h3>Private LLM Training & Inference</h3>
-      <p>Build powerful AI models on your own data with privacy by design. We architect and tune large language models for inference at scale while safeguarding intellectual property.</p>
-    </div>
-    <div class="service">
-      <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80" alt="DDoS consulting">
-      <h3>DDoS & Security Consulting</h3>
-      <p>Leverage 25+ years of experience in global DDoS mitigation. We conduct holistic security assessments, deploy zero‑trust architectures and implement layered defenses to stay ahead of attackers.</p>
-    </div>
-    <div class="service">
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Automation solutions">
-      <h3>Automation & Marketing Solutions</h3>
-      <p>Automate workflows across operations, sales and marketing. Our custom tools and no‑code integrations reduce manual work, increase efficiency and let your team focus on innovation.</p>
-    </div>
-  </div>
-</section>
-
-<section id="approach">
-  <h2>Our Approach</h2>
-  <div class="approach-grid">
-    <div class="approach">
-      <h3>Holistic Assessments</h3>
-      <p>We begin with a deep dive into your existing infrastructure, applications and business goals. This allows us to identify gaps and opportunities across security, performance and automation.</p>
-    </div>
-    <div class="approach">
-      <h3>Tailored Solutions</h3>
-      <p>No two networks or AI projects are alike. We craft custom architectures and AI pipelines that meet your requirements, whether you're a startup or a global hyperscaler.</p>
-    </div>
-    <div class="approach">
-      <h3>Continuous Improvement</h3>
-      <p>Technology evolves rapidly. We stay engaged, providing ongoing monitoring, tuning and updates to ensure your networks and models remain robust and effective.</p>
-    </div>
-  </div>
-</section>
-
-<section id="why">
-  <h2>Why Choose Us?</h2>
-  <div class="why-grid">
-    <div class="why">
-      <h3>Proven Expertise</h3>
-      <p>We’ve engineered networks for world‑class ISPs and built award‑winning DDoS defenses. Our decades of experience translate into reliable, high‑performing solutions.</p>
-    </div>
-    <div class="why">
-      <h3>Tailored AI</h3>
-      <p>Your data is unique. Our AI models are trained on your data with strict privacy controls, delivering bespoke intelligence while protecting your IP.</p>
-    </div>
-    <div class="why">
-      <h3>Holistic Security</h3>
-      <p>Security isn’t an afterthought. We integrate zero‑trust principles, threat detection and mitigation into every layer of your architecture.</p>
-    </div>
-    <div class="why">
-      <h3>Scalable & Transparent</h3>
-      <p>Our solutions grow with your business and come with clear documentation and training so your team is empowered to manage and extend them.</p>
-    </div>
-  </div>
-</section>
-
-<section id="blog">
-  <h2>Latest Insights</h2>
-  <div class="blog-grid">
-    <div class="blog-card">
-      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="BGP automation">
-      <div class="blog-card-content">
-        <h3>Routing Chaos with a Soundtrack</h3>
-        <p>Faith No More riffs meet BGP, FlowSpec, and resilient automation in a behind-the-scenes look at keeping the internet steady.</p>
-        <p><a href="blog/routing-chaos-with-a-soundtrack.html" style="color:var(--primary);text-decoration:underline;">Read the full post</a></p>
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">Pulse Solutions AI</div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#blog">Insights</a>
+        <a href="#bio">About</a>
+        <a href="#contact">Contact</a>
       </div>
+      <a class="pill" href="mailto:info@pulsesolutions-ai.com">Book an Intro</a>
     </div>
-    <div class="blog-card">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="Veteran engineers">
-      <div class="blog-card-content">
-        <h3>The Quiet Professionals of Tech</h3>
-        <p>Why veteran engineers are the steady hands modern security and networking teams can’t live without—and how to lead like they do.</p>
-        <p><a href="blog/the-quiet-professionals-of-tech.html" style="color:var(--primary);text-decoration:underline;">Read the full post</a></p>
+  </nav>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <div class="hero-chip">Network Security & Applied AI</div>
+        <h1>Harden infrastructure, unleash automation, keep velocity high.</h1>
+        <p>Pulse Solutions AI blends hyperscale networking pedigree with hands-on AI delivery. We build dependable routing architectures, private LLM stacks, and automation that teams actually adopt.</p>
+        <div class="hero-actions">
+          <a class="cta-primary" href="#contact">Schedule a Consultation</a>
+          <a class="cta-secondary" href="#services">See Capabilities</a>
+        </div>
       </div>
-    </div>
-    <div class="blog-card">
-      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Cloud DDoS defenses">
-      <div class="blog-card-content">
-        <h3>Behind the Scenes: Countering DDoS Attacks</h3>
-        <p>Cloud-scale protection counters modern DDoS threats and proves why scalable architectures safeguard services and reputations.</p>
-        <p><a href="https://blogs.oracle.com/cloud-infrastructure/post/behind-the-scenes-countering-ddos-attacks-with-cloud" style="color:var(--primary);text-decoration:underline;">Read the article</a></p>
+
+      <div class="hero-visual">
+        <div class="hero-visual-content">
+          <div class="data-card">
+            <span>Hyperscale networks deployed</span>
+            <strong>60+</strong>
+          </div>
+          <div class="data-card">
+            <span>Global DDoS scrubbing capacity managed</span>
+            <strong>35+ Tbps</strong>
+          </div>
+          <div class="data-card">
+            <span>AI & automation programs launched</span>
+            <strong>120+</strong>
+          </div>
+          <div class="data-card">
+            <span>Industries served</span>
+            <strong>Telco · Cloud · Finance · Gov</strong>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="bio">
-  <h2>Meet the Founder</h2>
-  <div class="bio">
+    <section id="services">
+      <div class="section-title"><span></span>What we deliver</div>
+      <h2>Secure infrastructure and purpose-built AI, delivered end-to-end.</h2>
+      <p class="intro">From BGP architecture to private model operations, we bring the calm, veteran execution teams want when resiliency and precision are non-negotiable.</p>
 
-    <img src="jim.png" alt="James DeLeskie">
-    <div class="bio-content">
-      <h3>James DeLeskie</h3>
-      <p>A pioneering network architect and security leader, James cut his teeth building some of the first ISPs in Canada and Ireland. He has led global DDoS defense at Tata Communications, built record‑breaking routers at Avici Systems and founded Mimir Networks. He helped drive innovation at Oracle Cloud Infrastructure and helps organizations harness AI for transformative results.</p>
+      <div class="metrics">
+        <div class="metric">
+          <span>Latency reductions</span>
+          <strong>38%</strong>
+          <p class="intro">Global ISPs leaned on our traffic engineering playbooks to sharpen customer experience.</p>
+        </div>
+        <div class="metric">
+          <span>AI adoption</span>
+          <strong>5x</strong>
+          <p class="intro">Automation programs launched with guardrails and change management built-in.</p>
+        </div>
+        <div class="metric">
+          <span>Incident response</span>
+          <strong>&lt;15 min</strong>
+          <p class="intro">Measured from detection to mitigation with layered DDoS and trust policies.</p>
+        </div>
+      </div>
 
-      <p>When he’s not designing hyperscale networks, you’ll find him at heavy‑metal shows—bringing the same energy and passion to cybersecurity and automation that he brings to the mosh pit.</p>
-    </div>
-  </div>
-</section>
+      <div class="cards-grid" style="margin-top: 40px;">
+        <article class="card">
+          <h3>Internet Routing & Architecture</h3>
+          <p>Design and optimize carrier-grade networks. BGP tuning, FlowSpec, traffic engineering, capacity modeling, and observability that scales with demand.</p>
+        </article>
+        <article class="card">
+          <h3>Private LLM Training & Inference</h3>
+          <p>Data pipelines, model selection, GPU orchestration, and inference APIs crafted to keep IP sovereign while unlocking natural-language interfaces.</p>
+        </article>
+        <article class="card">
+          <h3>DDoS & Zero-Trust Programs</h3>
+          <p>Layered defenses, continuous testing, and crisis playbooks informed by 25+ years of defending the largest networks on the planet.</p>
+        </article>
+        <article class="card">
+          <h3>Automation & GTM Systems</h3>
+          <p>Marketing ops, sales enablement, and internal tooling delivered via low-code + custom stacks so teams can focus on signal, not swivel-chair tasks.</p>
+        </article>
+      </div>
+    </section>
 
-<section id="contact">
-  <h2>Let’s Work Together</h2>
-  <p>Ready to take your network and AI initiatives to the next level? Reach out and let’s explore how Pulse Solutions AI can elevate your business.</p>
-  <p>Email: <a href="mailto:info@pulsesolutions-ai.com">info@pulsesolutions-ai.com</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/jimdeleskie" target="_blank">Jim DeLeskie</a></p>
-</section>
+    <hr class="divider" />
 
-<div class="footer">
-  © 2025 Pulse Solutions AI — All rights reserved.
-</div>
+    <section id="approach">
+      <div class="section-title"><span></span>How we work</div>
+      <h2>Strategic clarity paired with gritty execution.</h2>
+      <p class="intro">Every engagement starts with context gathering, moves through co-design, and stays accountable with instrumentation plus ongoing improvement loops.</p>
+
+      <div class="approach-timeline">
+        <div class="timeline-row">
+          <div class="timeline-step">01</div>
+          <div>
+            <h3>Discovery & war-room diagnostics</h3>
+            <p class="intro">Deep dives into routing tables, telemetry, and stakeholder goals surface immediate risks and hidden leverage points.</p>
+          </div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-step">02</div>
+          <div>
+            <h3>Design sprints & architecture blueprints</h3>
+            <p class="intro">Co-create target states, threat models, and AI/automation roadmaps that integrate with current tooling, not fight it.</p>
+          </div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-step">03</div>
+          <div>
+            <h3>Implementation with telemetry-first mindset</h3>
+            <p class="intro">We stage rollouts with rehearsal plans, red-team drills, and tight feedback loops so teams stay informed and confident.</p>
+          </div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-step">04</div>
+          <div>
+            <h3>Continuous optimization & enablement</h3>
+            <p class="intro">We don’t disappear post-launch. Dashboards, playbooks, and training ensure your crew owns the stack going forward.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-us">
+      <div class="section-title"><span></span>Why Pulse</div>
+      <h2>Pragmatic specialists who have carried the pager.</h2>
+      <div class="cards-grid" style="margin-top: 20px;">
+        <article class="card">
+          <h3>Proven expertise</h3>
+          <p>From the first ISPs in Canada & Ireland to Oracle Cloud Infrastructure, we have architected, shipped, and defended at hyperscale.</p>
+        </article>
+        <article class="card">
+          <h3>Tailored AI</h3>
+          <p>Your data stays sovereign. We focus on privacy, governance, and explainability so executives and regulators stay aligned.</p>
+        </article>
+        <article class="card">
+          <h3>Holistic security</h3>
+          <p>Zero-trust patterns, traffic inspection, and automated mitigation tuned for the threat landscape you actually face.</p>
+        </article>
+        <article class="card">
+          <h3>Transparent handoff</h3>
+          <p>Documentation, enablement, and instrumentation are part of the engagement—not an optional phase.</p>
+        </article>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section id="blog">
+      <div class="section-title"><span></span>Field notes</div>
+      <h2>Latest insights from the front lines.</h2>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <img src="assets/images/blog-routing.svg" alt="Abstract network visualization" />
+          <div class="blog-card-content">
+            <h3>Routing Chaos with a Soundtrack</h3>
+            <p>Faith No More riffs meet BGP, FlowSpec, and resilient automation in a behind-the-scenes look at keeping the internet steady.</p>
+            <a href="blog/routing-chaos-with-a-soundtrack.html">Read the full post →</a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <img src="assets/images/blog-quiet.svg" alt="Abstract calm grid" />
+          <div class="blog-card-content">
+            <h3>The Quiet Professionals of Tech</h3>
+            <p>Why veteran engineers are the steady hands modern security and networking teams can’t live without—and how to lead like they do.</p>
+            <a href="blog/the-quiet-professionals-of-tech.html">Read the full post →</a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <img src="assets/images/blog-ddos.svg" alt="Abstract defense waves" />
+          <div class="blog-card-content">
+            <h3>Behind the Scenes: Countering DDoS Attacks</h3>
+            <p>Cloud-scale protection counters modern DDoS threats and proves why scalable architectures safeguard services and reputations.</p>
+            <a href="https://blogs.oracle.com/cloud-infrastructure/post/behind-the-scenes-countering-ddos-attacks-with-cloud" target="_blank" rel="noopener">Read the article →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="bio">
+      <div class="section-title"><span></span>Leadership</div>
+      <div class="split">
+        <div class="bio-card">
+          <img src="jim.png" alt="James DeLeskie" />
+          <div class="bio-meta">
+            <span>Founder & Principal</span>
+            <h3>James DeLeskie</h3>
+            <p>A pioneering network architect and security leader, James helped build early ISPs in Canada and Ireland, led global DDoS defense at Tata Communications, architected record-breaking routers at Avici Systems, founded Mimir Networks, and accelerated innovation at Oracle Cloud Infrastructure.</p>
+            <p>When he’s not designing hyperscale networks, he’s likely at a heavy-metal show—bringing the same intensity to automation and AI programs that he brings to the mosh pit.</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Trusted by teams who run mission-critical traffic.</h3>
+          <p>Telcos, financial institutions, cloud-native companies, and public agencies rely on Pulse Solutions AI when uptime, trust, and velocity cannot slip. Engagements range from rapid-response DDoS mitigation audits to multi-quarter AI operating model builds.</p>
+          <ul style="margin-left: 16px; color: var(--muted); line-height: 1.8;">
+            <li>Executive workshops aligning security, product, and GTM leaders</li>
+            <li>Hands-on routing and traffic engineering, including FlowSpec + SRv6</li>
+            <li>Private LLM labs with governance, labeling strategy, and platform ops</li>
+            <li>Automation squads embedding with ops/marketing to eliminate toil</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title"><span></span>Contact</div>
+      <div class="cta-panel">
+        <h2>Ready to harden your stack and move faster?</h2>
+        <p>Email: <a href="mailto:info@pulsesolutions-ai.com">info@pulsesolutions-ai.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/jimdeleskie" target="_blank" rel="noopener">Jim DeLeskie</a></p>
+        <p>Share a quick brief on what you’re solving—routing, DDoS mitigation, AI adoption, or automation—and we’ll respond within one business day.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © 2025 Pulse Solutions AI — Secure automation and AI programs with confidence.
+    </footer>
+  </main>
 </body>
 </html>

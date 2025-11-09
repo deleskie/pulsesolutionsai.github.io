@@ -1,0 +1,32 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#090c17" />
+      <stop offset="100%" stop-color="#142339" />
+    </linearGradient>
+    <radialGradient id="orb" cx="0.7" cy="0.3" r="0.5">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="grid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#64ffda" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg2)" />
+  <circle cx="820" cy="240" r="260" fill="url(#orb)" />
+  <g transform="skewX(-12) translate(-80, 0)" stroke="url(#grid)" stroke-width="2" opacity="0.35">
+    <path d="M50 0 V800" />
+    <path d="M150 0 V800" />
+    <path d="M250 0 V800" />
+    <path d="M350 0 V800" />
+    <path d="M450 0 V800" />
+    <path d="M550 0 V800" />
+    <path d="M650 0 V800" />
+    <path d="M750 0 V800" />
+    <path d="M850 0 V800" />
+    <path d="M950 0 V800" />
+    <path d="M1050 0 V800" />
+  </g>
+  <path d="M0 660 L1200 500" stroke="#64ffda" stroke-width="6" stroke-opacity="0.4" stroke-linecap="round" />
+</svg>
