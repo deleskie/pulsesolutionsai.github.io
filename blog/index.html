@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Field Notes – Pulse Solutions AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Field notes from Pulse Solutions AI on BGP, FlowSpec, veteran engineering leadership, and applied AI." />
+<link rel="canonical" href="https://pulsesolutionsai.github.io/blog/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #05070c;
+    --card: rgba(11, 18, 27, 0.9);
+    --primary: #0ea5e9;
+    --accent: #22d3ee;
+    --highlight: #64ffda;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --radius: 18px;
+    --max-width: 1040px;
+    --transition: 220ms ease;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at top, rgba(8,47,73,0.45), transparent 45%), var(--bg);
+    color: var(--text);
+    min-height:100vh;
+  }
+  nav {
+    position: sticky;
+    top:0;
+    z-index:20;
+    backdrop-filter: blur(12px);
+    background: rgba(5,7,12,0.75);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-inner {
+    max-width: var(--max-width);
+    margin:0 auto;
+    padding:18px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+  }
+  .logo {
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    letter-spacing:0.08em;
+    color:var(--accent);
+    text-transform:uppercase;
+    text-decoration:none;
+  }
+  .nav-links { display:flex; gap:24px; flex-wrap:wrap; }
+  .nav-links a {
+    color:var(--muted);
+    text-decoration:none;
+    font-weight:500;
+    transition:color var(--transition);
+  }
+  .nav-links a:hover { color:var(--accent); }
+  .pill {
+    display:inline-flex;
+    align-items:center;
+    padding:10px 18px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,0.08);
+    color:var(--text);
+    text-decoration:none;
+    font-weight:600;
+  }
+  main { max-width: var(--max-width); margin:0 auto; padding:120px 24px 100px; }
+  header.hero { margin-bottom:32px; }
+  header.hero h1 { font-size: clamp(2.4rem,4vw,3.4rem); font-weight:900; line-height:1.15; }
+  header.hero p.meta { font-family:'IBM Plex Mono',monospace; letter-spacing:0.12em; text-transform:uppercase; color:var(--highlight); margin-top:12px; }
+  header.hero p.desc { margin-top:16px; color:var(--muted); max-width:720px; }
+  .posts { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:26px; margin-top:50px; }
+  .post-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    border:1px solid rgba(255,255,255,0.07);
+    padding:28px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    transition: transform var(--transition), border-color var(--transition);
+  }
+  .post-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(34,211,238,0.4);
+  }
+  .post-card span.tag {
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .post-card h2 { font-size:1.4rem; color:var(--accent); }
+  .post-card p { color:var(--text); flex:1; }
+  .post-card a {
+    color:var(--highlight);
+    text-decoration:none;
+    font-weight:600;
+  }
+  .footer {
+    margin-top:90px;
+    padding:40px 0;
+    text-align:center;
+    color:var(--muted);
+    font-size:0.9rem;
+    border-top:1px solid rgba(255,255,255,0.08);
+  }
+  .footer-links {
+    display:flex;
+    flex-wrap:wrap;
+    gap:24px;
+    justify-content:center;
+    margin-bottom:16px;
+  }
+  .footer a {
+    color:var(--accent);
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.9rem;
+  }
+  .footer a:hover { text-decoration:underline; }
+  @media (max-width:640px) {
+    .post-card { padding:22px; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/">Pulse Solutions AI</a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#approach">Approach</a>
+      <a href="/#why-us">Why Us</a>
+      <a href="/#blog">Insights</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#bio">About</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a class="pill" href="mailto:info@pulsesolutions-ai.com">Book an Intro</a>
+  </div>
+</nav>
+<main>
+  <header class="hero">
+    <p class="meta">Field Notes</p>
+    <h1>Dispatches from decades of routing, mitigation, and applied AI.</h1>
+    <p class="desc">Long-form essays on BGP, FlowSpec, automation, and the quiet professionals who keep the Internet online. Expect ongoing posts as we publish fresh war stories and playbooks.</p>
+  </header>
+  <section class="posts">
+    <article class="post-card">
+      <span class="tag">Routing • FlowSpec</span>
+      <h2>Routing Chaos with a Soundtrack</h2>
+      <p>Faith No More riffs meet BGP, FlowSpec, and resilient automation in a behind-the-scenes look at keeping the internet steady.</p>
+      <a href="/blog/routing-chaos-with-a-soundtrack.html">Read post →</a>
+    </article>
+    <article class="post-card">
+      <span class="tag">Leadership • Veterans</span>
+      <h2>The Quiet Professionals of Tech</h2>
+      <p>Why veteran engineers are the steady hands modern security and networking teams can’t live without—and how to lead like they do.</p>
+      <a href="/blog/the-quiet-professionals-of-tech.html">Read post →</a>
+    </article>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/#services">Services</a>
+    <a href="/#approach">Approach</a>
+    <a href="/#why-us">Why Us</a>
+    <a href="/#blog">Insights</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#bio">About</a>
+    <a href="/#contact">Contact</a>
+    <a href="/blog/routing-chaos-with-a-soundtrack.html">Routing Chaos</a>
+    <a href="/blog/the-quiet-professionals-of-tech.html">Quiet Professionals</a>
+  </div>
+  <p>© 2025 Pulse Solutions AI — Secure automation and AI programs with confidence.</p>
+</footer>
+</body>
+</html>
