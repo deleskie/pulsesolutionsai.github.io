@@ -213,7 +213,7 @@
 <h2>The Unsung Roadie of the Internet</h2>
 <p>If the global internet is a massive rock festival, BGP is the roadie who makes sure the lights come on and every band hits the right stage. It doesn’t get applause, but without it, the show doesn’t happen.</p>
 
-<p>Before BGP, the internet looked more like a loose collection of regional garage bands—each playing their own small gigs, rarely crossing paths. Then came BGP (RFC 1105, courtesy of Yakov Rekhter and Kirk Lougheed). Suddenly, networks could peer, exchange routes, and scale globally. It was the tour manager the internet never knew it needed.</p>
+<p>Before BGP, the internet looked more like a loose collection of regional garage bands—each playing their own small gigs, rarely crossing paths. Then came BGP (<a href="https://www.rfc-editor.org/rfc/rfc1105" target="_blank" rel="noopener">RFC 1105</a>, courtesy of Yakov Rekhter and Kirk Lougheed). Suddenly, networks could peer, exchange routes, and scale globally. It was the tour manager the internet never knew it needed.</p>
 
 <p>BGP’s stayed relevant because it was designed to evolve. It’s modular. Extensible. A protocol that can take a punch and still keep the tour on schedule. But like any roadie, BGP has one tragic flaw: it trusts too easily. It believes what it’s told, even when the source is shady. That blind trust has cost the internet dearly—from misconfigurations that blackhole entire regions to hijacks that redirect global traffic through rogue ASes.</p>
 
@@ -234,7 +234,7 @@
 <h2>FlowSpec: The Firepower I Once Feared</h2>
 <p>I didn’t trust FlowSpec when I first saw it. On paper, it sounded reckless—injecting ACL-like rules across routers in real time? One typo and you could nuke a /8. I’d seen automation blow up enough times to be wary of anything that reached into the control plane.</p>
 
-<p>I first saw FlowSpec taking shape in the late 2000s—RFC 5575 hit in 2009, and my gut reaction was, <em>absolutely not.</em> I respected the hell out of Danny McPherson—one of the original authors—but I’d seen too many “automation miracles” turn into outages. The idea of pushing dynamic filters across routers in real time felt like handing the pyro crew a flamethrower mid-set. One typo and you’re taking down an entire /8.</p>
+<p>I first saw FlowSpec taking shape in the late 2000s—<a href="https://www.rfc-editor.org/rfc/rfc5575" target="_blank" rel="noopener">RFC 5575</a> hit in 2009, and my gut reaction was, <em>absolutely not.</em> I respected the hell out of Danny McPherson—one of the original authors—but I’d seen too many “automation miracles” turn into outages. The idea of pushing dynamic filters across routers in real time felt like handing the pyro crew a flamethrower mid-set. One typo and you’re taking down an entire /8.</p>
 
 <p>For years, I kept it at arm’s length. I’d read the drafts, listen to Danny and Barry Greene explain the use cases, and still think, <em>no way I’m running that on a live backbone.</em> But then came the volumetric DDoS era—the kind that eats routers for breakfast. Suddenly, static ACLs and scrubbing centers couldn’t keep up. We needed a way to inject precision defenses at line speed.</p>
 
@@ -261,7 +261,7 @@
 <p>The answer wasn’t panic. It was validation.</p>
 
 <h2>RPKI: Keeping the Setlist Honest</h2>
-<p>Resource Public Key Infrastructure (RPKI) is the backstage security pass for BGP. It proves who’s authorized to announce what. When it first hit the scene, I was skeptical. ROAs felt brittle, validators added moving parts, and trust anchors were still a work in progress. But over time—and thanks to operators like Job Snijders and the NLnet Labs team behind Routinator and Krill—it grew up.</p>
+<p>Resource Public Key Infrastructure (<a href="https://www.rfc-editor.org/rfc/rfc6480" target="_blank" rel="noopener">RPKI, RFC 6480</a>) is the backstage security pass for BGP. It proves who’s authorized to announce what. When it first hit the scene, I was skeptical. ROAs felt brittle, validators added moving parts, and trust anchors were still a work in progress. But over time—and thanks to operators like Job Snijders and the NLnet Labs team behind Routinator and Krill—it grew up.</p>
 
 <p>RPKI didn’t just add cryptographic signatures; it added accountability. It gave operators the power to say, “This prefix belongs to me—and here’s the proof.” That alone changed the tone of global routing.</p>
 
